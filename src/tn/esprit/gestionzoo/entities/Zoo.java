@@ -1,20 +1,42 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
     private static final int MAX_CAGES = 25;
     private Animal[] animals;
-    String name;
-    String city;
-    int nbrCages;
+    private String name;
+    private String city;
+    private int nbrCages;
 
     public Zoo(String name, String city, int nbrCages) {
+        setName(name); // validation
+        this.city = city;
         if (nbrCages > MAX_CAGES) nbrCages = MAX_CAGES;
         this.animals = new Animal[nbrCages];
-        this.name = name;
-        this.city = city;
         this.nbrCages = nbrCages;
     }
 
+    public String getName() { return name; }
+    public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Le nom du zoo ne peut pas être vide");
+        }
+        this.name = name;
+    }
+
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
+
+    public int getNbrCages() { return nbrCages; }
+
     public boolean addAnimal(Animal animal) {
-        if (isZooFull() || searchAnimal(animal) != -1) return false;
+        if (isZooFull()) {
+            System.out.println("Impossible d'ajouter : zoo plein.");
+            return false;
+        }
+        if (searchAnimal(animal) != -1) {
+            System.out.println("Cet animal existe déjà.");
+            return false;
+        }
         for (int i = 0; i < animals.length; i++) {
             if (animals[i] == null) {
                 animals[i] = animal;
@@ -26,7 +48,7 @@ public class Zoo {
 
     public boolean removeAnimal(Animal animal) {
         for (int i = 0; i < animals.length; i++) {
-            if (animals[i] != null && animals[i].name.equals(animal.name)) {
+            if (animals[i] != null && animals[i].getName().equals(animal.getName())) {
                 animals[i] = null;
                 return true;
             }
@@ -49,7 +71,7 @@ public class Zoo {
 
     public int searchAnimal(Animal animal) {
         for (int i = 0; i < animals.length; i++) {
-            if (animals[i] != null && animals[i].name.equals(animal.name)) {
+            if (animals[i] != null && animals[i].getName().equals(animal.getName())) {
                 return i;
             }
         }
