@@ -5,7 +5,6 @@ import tn.esprit.gestionzoo.entities.*;
 public class ZooManagement {
     public static void main(String[] args) {
 
-        // --- Tests existants ---
         Animal lion = new Animal("Félidé", "Lion", 5, true);
         Animal elephant = new Animal("Éléphantidé", "Éléphant", 10, true);
         Animal crocodile = new Animal("Crocodylidé", "Crocodile", 7, false);
@@ -34,27 +33,42 @@ public class ZooManagement {
         Zoo biggerZoo = Zoo.comparerZoo(zoo1, zoo2);
         System.out.println("Le zoo avec le plus d'animaux est: " + biggerZoo.getName());
 
-        // --- Instruction 21 : instances par défaut ---
         Dolphin d1 = new Dolphin();
         Penguin p1 = new Penguin();
         Terrestrial t1 = new Terrestrial();
 
-        // --- Instruction 22 : constructeurs paramétrés ---
         Dolphin d2 = new Dolphin("Delphinidae", "Dolly", 8, true, "Ocean", 25.5f);
         Penguin p2 = new Penguin("Spheniscidae", "Pingo", 3, false, "Antarctica", 50.0f);
+        Penguin p3 = new Penguin("Spheniscidae", "PingoDeep", 4, false, "Antarctica", 75.0f);
         Terrestrial t2 = new Terrestrial("Canidae", "Fox", 4, true, 4);
 
-        // --- Instruction 23 : affichage toString ---
         System.out.println("\n=== Display new animals ===");
         System.out.println(d2);
         System.out.println(p2);
         System.out.println(t2);
 
-        // --- Instruction 24 : méthode swim() ---
-        System.out.println("\n=== Swim tests ===");
-        Aquatic a1 = new Aquatic("Generic", "Fish", 1, false, "Lake");
-        a1.swim();
-        d2.swim();
-        p2.swim();
+        System.out.println("\n=== Adding aquatic animals to zoo1 ===");
+        zoo1.addAquaticAnimal(d2);
+        zoo1.addAquaticAnimal(p2);
+        zoo1.addAquaticAnimal(p3);
+
+        Penguin duplicateP = new Penguin("Spheniscidae", "Pingo", 3, false, "Antarctica", 50.0f);
+        System.out.println("Adding duplicate penguin (should fail): " + zoo1.addAquaticAnimal(duplicateP));
+
+        System.out.println("\n=== Swim tests (all aquatics) ===");
+        zoo1.makeAllAquaticsSwim();
+
+        Aquatic aquaticRef = d2;
+        System.out.print("Aquatic ref calling swim(): ");
+        aquaticRef.swim();
+
+        System.out.println("\nMax penguin swimming depth in zoo1: " + zoo1.maxPenguinSwimmingDepth());
+
+        System.out.println();
+        zoo1.displayNumberOfAquaticsByType();
+
+        System.out.println("\nEquality checks:");
+        System.out.println("p2.equals(duplicateP): " + p2.equals(duplicateP));
+        System.out.println("p2.equals(p3): " + p2.equals(p3));
     }
 }
