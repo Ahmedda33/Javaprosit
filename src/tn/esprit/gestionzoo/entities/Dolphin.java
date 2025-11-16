@@ -5,7 +5,9 @@ import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
 public class Dolphin extends Aquatic {
     private float swimmingSpeed;
 
-    public Dolphin() throws InvalidAgeException { super(); }
+    public Dolphin() throws InvalidAgeException {
+        super();
+    }
 
     public Dolphin(String family, String name, int age, boolean isMammal, String habitat, float swimmingSpeed) throws InvalidAgeException {
         super(family, name, age, isMammal, habitat);
@@ -16,7 +18,9 @@ public class Dolphin extends Aquatic {
     public void setSwimmingSpeed(float swimmingSpeed) { this.swimmingSpeed = swimmingSpeed; }
 
     @Override
-    public void swim() { System.out.println(getName() + " the dolphin is swimming."); }
+    public void swim() {
+        System.out.println(getName() + " the dolphin is swimming.");
+    }
 
     @Override
     public String toString() {
