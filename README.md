@@ -26,19 +26,6 @@ It demonstrates:
 - Display, search, and sort employees and departments  
 - TreeMap sorting of employees by ID  
 
----
-
-## 🗂 Project Structure
-
-tn.company
-│
-├─ entities # Employee and Department classes
-├─ interfaces # Management interfaces
-├─ services # Implementation of management and assignments
-└─ main # Main.java - Entry point
-
-yaml
-Copy code
 
 ---
 
@@ -54,4 +41,4 @@ Copy code
 ## 👨‍💻 Auteur
 **Daoudi Ahmed**  
 📧 Email : [loganray3443@gmail.com ]
-🔗 LinkedIn : [[your-linkedin-link](https://www.linkedin.com/in/your-linkedin-link](https://www.linkedin.com/in/logan-ray-093204391/))
+🔗 LinkedIn : [(your-linkedin-link](https://www.linkedin.com/in/logan-ray-093204391/)]
