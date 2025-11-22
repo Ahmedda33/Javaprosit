@@ -10,10 +10,8 @@ public class Employe implements Comparable<Employe> {
     private String nomDepartement;
     private int grade;
 
-    // Constructeur sans paramètres
     public Employe() {}
 
-    // Constructeur avec paramètres
     public Employe(int id, String nom, String prenom, String nomDepartement, int grade) {
         this.id = id;
         this.nom = nom;
@@ -22,7 +20,6 @@ public class Employe implements Comparable<Employe> {
         this.grade = grade;
     }
 
-    // Getters et Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -38,7 +35,6 @@ public class Employe implements Comparable<Employe> {
     public int getGrade() { return grade; }
     public void setGrade(int grade) { this.grade = grade; }
 
-    // Redéfinition equals (id + nom)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,13 +43,11 @@ public class Employe implements Comparable<Employe> {
         return id == e.id && Objects.equals(nom, e.nom);
     }
 
-    // Comparable pour tri par ID
     @Override
     public int compareTo(Employe e) {
         return Integer.compare(this.id, e.id);
     }
 
-    // toString
     @Override
     public String toString() {
         return "Employe{" +

@@ -8,17 +8,15 @@ public class Departement {
     private String nomDepartement;
     private int nbEmployes;
 
-    // Constructeur sans paramètre
+
     public Departement() {}
 
-    // Constructeur avec paramètres
     public Departement(int id, String nomDepartement, int nbEmployes) {
         this.id = id;
         this.nomDepartement = nomDepartement;
         this.nbEmployes = nbEmployes;
     }
 
-    // Getters & Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -28,7 +26,6 @@ public class Departement {
     public int getNbEmployes() { return nbEmployes; }
     public void setNbEmployes(int nbEmployes) { this.nbEmployes = nbEmployes; }
 
-    // equals(): id + nom
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,7 +40,6 @@ public class Departement {
         return Objects.hash(id, nomDepartement);
     }
 
-    // toString
     @Override
     public String toString() {
         return "Departement{" +
