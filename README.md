@@ -30,13 +30,6 @@ Il met en avant :
 ## 🎨 Design
 Projet simple et clair, conçu pour **apprendre la programmation orientée objet en Java** et la manipulation des collections, en simulant une gestion d’entreprise réaliste.
 
----
-
-## 👨‍💻 Auteur
-**Paulo Dybala**  
-📧 Email : [your-email@example.com](mailto:your-email@example.com)  
-🔗 GitHub : [your-github-link](https://github.com/your-github-link)  
-🔗 LinkedIn : [your-linkedin-link](https://www.linkedin.com/in/your-linkedin-link)
 
 
 ## 👨‍💻 Auteur
